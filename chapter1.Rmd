@@ -17,8 +17,6 @@ skills: 1
 
 `@instructions`
 - 使用pipeline`%>%`分别使用`dim`、`str`完成数据探查。
-- 使用`pca_inbar`查看PCA的结果。
-- 使用`labs`增加图片的可读性。
 
 `@hint`
 - `mtcars %>% dim` 查看数据大小
@@ -28,7 +26,6 @@ skills: 1
 ```{r}
 library(irlba)
 library(tidyverse)
-library(add2evaluation)
 ```
 
 `@sample_code`
@@ -49,7 +46,7 @@ mtcars%>%
 
 `@sct`
 ```{r}
-test_output_contains(c(32,11), incorrect_msg = "Make sure to add `6 + 12` on a new line. Do not start the line with a `#`, otherwise your R code is not executed!")
+test_output_contains(c(32,11), incorrect_msg = "答案不正确。")
 success_msg("可以发现这是一个32行x11列的数据。")
 ```
 
@@ -63,17 +60,20 @@ key: 7f9a0896b2
 xp: 100
 ```
 
-
+PCA可以根据数据的方差建立聚合的指标，描述数据，用于了解数据内的样本。
 
 `@instructions`
-
+- 使用`pca_inbar`查看PCA的结果。
+- 使用`labs`增加图片的可读性。
 
 `@hint`
-- `mtcars %>% pca_inbar()`
+- `mtcars %>% pca_inbar()`，这里会展示PC1。
 
 `@pre_exercise_code`
 ```{r}
-
+library(irlba)
+library(tidyverse)
+library(add2evaluation)
 ```
 
 `@sample_code`
