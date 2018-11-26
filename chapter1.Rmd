@@ -4,7 +4,7 @@ title: PCA的数据展示
 description: 在介绍`Tidyverse`包之前，我们首先进行对数据的基本认识，因此会使用到其他R包。
 ---
 
-## How it works
+## 查看数据结构
 
 ```yaml
 type: NormalExercise
@@ -17,10 +17,12 @@ skills: 1
 
 `@instructions`
 - 使用pipeline`%>%`分别使用`dim`、`str`完成数据探查。
-- 使用``
+- 使用`pca_inbar`查看PCA的结果。
+- 使用`labs`增加图片的可读性。
 
 `@hint`
 - `mtcars %>% dim`和`mtcars %>% str`
+- `mtcars %>% pca_inbar()`
 
 `@pre_exercise_code`
 ```{r}
@@ -31,16 +33,15 @@ library(add2evaluation)
 
 `@sample_code`
 ```{r}
-mtcars
+library(irlba)
+library(tidyverse)
+library(add2evaluation)
 
-mtcars %>% 
-    pca_inbar() +
-    labs(
-        x = 'variables in top 10'
-        ,y = 'contribution'
-        ,title = 'Good variables in PC1'
-        ,captionn = 'made by Jiaxiang Li - jiaxiangli.netlify.com'
-    )
+mtcars %>%
+	dim
+
+mtcars%>%
+	str
 ```
 
 `@solution`
@@ -63,4 +64,49 @@ mtcars %>%
 library(testwhat)
 test_output_contains("18", incorrect_msg = "Make sure to add `6 + 12` on a new line. Do not start the line with a `#`, otherwise your R code is not executed!")
 success_msg("可以发现这是一个32行x11列的数据。")
+```
+
+---
+
+## 使用PCA查看数据特征
+
+```yaml
+type: NormalExercise
+key: 7f9a0896b2
+xp: 100
+```
+
+
+
+`@instructions`
+
+
+`@hint`
+mtcars %>% 
+    pca_inbar() +
+    labs(
+        x = 'variables in top 10'
+        ,y = 'contribution'
+        ,title = 'Good variables in PC1'
+        ,captionn = 'made by Jiaxiang Li - jiaxiangli.netlify.com'
+    )
+
+`@pre_exercise_code`
+```{r}
+
+```
+
+`@sample_code`
+```{r}
+
+```
+
+`@solution`
+```{r}
+
+```
+
+`@sct`
+```{r}
+
 ```
