@@ -1,4 +1,6 @@
 title: Add to Tidyverse
+instructors:
+ - Jiaxiang Li
 description: Course description goes here.
 programming_language: r
 from: "r-base-prod:v1.0.2"
