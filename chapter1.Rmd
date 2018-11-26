@@ -24,6 +24,7 @@ skills: 1
 
 `@pre_exercise_code`
 ```{r}
+install.package('irlba')
 library(irlba)
 library(tidyverse)
 ```
