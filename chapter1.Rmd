@@ -1,16 +1,16 @@
---- 
-title_meta  : Chapter 1
-title       : PCA的数据展示
-description : "在介绍`Tidyverse`包之前，我们首先进行对数据的基本认识，因此会使用到其他R包。"
-
 ---
+title_meta: 'Chapter 1'
+title: PCA的数据展示
+description: 在介绍`Tidyverse`包之前，我们首先进行对数据的基本认识，因此会使用到其他R包。
+---
+
 ## How it works
 
 ```yaml
 type: NormalExercise
+key: 15d729634a
 xp: 100
 skills: 1
-key: 15d729634a
 ```
 
 以自带数据`mtcars`为例，我们需要了解`mtcars`的数据框架，并且使用PCA查看数据的主要特征。
@@ -21,7 +21,6 @@ key: 15d729634a
 
 `@hint`
 - `mtcars %>% dim`和`mtcars %>% str`
-
 
 `@pre_exercise_code`
 ```{r}
