@@ -25,15 +25,13 @@ skills: 1
 `@pre_exercise_code`
 ```{r}
 install.packages('irlba')
+devtools::install_github('JiaxiangBU/add2evaluation')
 library(irlba)
-library(tidyverse)
 ```
 
 `@sample_code`
 ```{r}
-library(irlba)
 library(tidyverse)
-library(add2evaluation)
 ```
 
 `@solution`
