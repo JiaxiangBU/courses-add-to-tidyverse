@@ -23,6 +23,7 @@ This is an example exercise. This is an example exercise.
 
 `@pre_exercise_code`
 ```{r}
+install.package('tidyverse')
 library(tidyverse)
 ```
 
