@@ -33,3 +33,7 @@ download_data <- function(x) {
 # download_data(
 #   "https://assets.datacamp.com/production/repositories/19/datasets/27a2a8587eff17add54f4ba288e770e235ea3325/coffee.csv"
 # )
+
+install_version("1.2.1", "3.0.0")
+install_github('JiaxiangBU/add2evaluation')
+
