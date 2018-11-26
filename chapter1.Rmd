@@ -525,3 +525,71 @@ test_output_contains("class(my_logical)",
                      incorrect_msg = sprintf(patt, "my_logical"))
 success_msg("Congratulations! This was the last exercise for this chapter. Head over to the next chapter to get immersed in the world of vectors!")
 ```
+--- 
+title_meta  : Chapter 1
+title       : PCA的数据展示
+description : "在介绍`Tidyverse`包之前，我们首先进行对数据的基本认识，因此会使用到其他R包。"
+
+---
+## How it works
+
+```yaml
+type: NormalExercise
+xp: 100
+skills: 1
+key: 15d729634a
+```
+
+以自带数据`mtcars`为例，我们需要了解`mtcars`的数据框架，并且使用PCA查看数据的主要特征。
+
+`@instructions`
+- 使用pipeline`%>%`分别使用`dim`、`str`完成数据探查。
+- 使用``
+
+`@hint`
+- `mtcars %>% dim`和`mtcars %>% str`
+
+
+`@pre_exercise_code`
+```{r}
+library(irlba)
+library(tidyverse)
+library(add2evaluation)
+```
+
+`@sample_code`
+```{r}
+mtcars
+
+mtcars %>% 
+    pca_inbar() +
+    labs(
+        x = 'variables in top 10'
+        ,y = 'contribution'
+        ,title = 'Good variables in PC1'
+        ,captionn = 'made by Jiaxiang Li - jiaxiangli.netlify.com'
+    )
+```
+
+`@solution`
+```{r}
+mtcars %>% 
+    dim
+
+mtcars %>% 
+    pca_inbar() +
+    labs(
+        x = 'variables in top 10'
+        ,y = 'contribution'
+        ,title = 'Good variables in PC1'
+        ,captionn = 'made by Jiaxiang Li - jiaxiangli.netlify.com'
+    )
+```
+
+`@sct`
+```{r}
+library(testwhat)
+test_output_contains("18", incorrect_msg = "Make sure to add `6 + 12` on a new line. Do not start the line with a `#`, otherwise your R code is not executed!")
+success_msg("可以发现这是一个32行x11列的数据。")
+```
+
