@@ -21,8 +21,8 @@ skills: 1
 - 使用`labs`增加图片的可读性。
 
 `@hint`
-- `mtcars %>% dim`和`mtcars %>% str`
-- `mtcars %>% pca_inbar()`
+- `mtcars %>% dim` 查看数据大小
+- `mtcars %>% str` 查看数据变量情况
 
 `@pre_exercise_code`
 ```{r}
@@ -36,7 +36,10 @@ library(add2evaluation)
 library(irlba)
 library(tidyverse)
 library(add2evaluation)
+```
 
+`@solution`
+```{r}
 mtcars %>%
 	dim
 
@@ -44,25 +47,9 @@ mtcars%>%
 	str
 ```
 
-`@solution`
-```{r}
-mtcars %>% 
-    dim
-
-mtcars %>% 
-    pca_inbar() +
-    labs(
-        x = 'variables in top 10'
-        ,y = 'contribution'
-        ,title = 'Good variables in PC1'
-        ,captionn = 'made by Jiaxiang Li - jiaxiangli.netlify.com'
-    )
-```
-
 `@sct`
 ```{r}
-library(testwhat)
-test_output_contains("18", incorrect_msg = "Make sure to add `6 + 12` on a new line. Do not start the line with a `#`, otherwise your R code is not executed!")
+test_output_contains(c(32,11), incorrect_msg = "Make sure to add `6 + 12` on a new line. Do not start the line with a `#`, otherwise your R code is not executed!")
 success_msg("可以发现这是一个32行x11列的数据。")
 ```
 
@@ -82,14 +69,7 @@ xp: 100
 
 
 `@hint`
-mtcars %>% 
-    pca_inbar() +
-    labs(
-        x = 'variables in top 10'
-        ,y = 'contribution'
-        ,title = 'Good variables in PC1'
-        ,captionn = 'made by Jiaxiang Li - jiaxiangli.netlify.com'
-    )
+- `mtcars %>% pca_inbar()`
 
 `@pre_exercise_code`
 ```{r}
@@ -103,7 +83,14 @@ mtcars %>%
 
 `@solution`
 ```{r}
-
+mtcars %>% 
+    pca_inbar() +
+    labs(
+        x = 'variables in top 10'
+        ,y = 'contribution'
+        ,title = 'Good variables in PC1'
+        ,captionn = 'made by Jiaxiang Li - jiaxiangli.netlify.com'
+    )
 ```
 
 `@sct`
